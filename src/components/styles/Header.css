@@ -1,0 +1,12 @@
+.header h1 {
+    font-size: 2rem;
+}
+
+.header p {
+    font-size: 1.5rem;
+}
+
+.header p span {
+    color: #29F3C3;
+    font-weight: 700;
+}

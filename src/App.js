@@ -1,8 +1,11 @@
-import './App.css';
+// Importando componente AppRoutes
+import AppRouter from "./routers/AppRouter";
 
 function App() {
   return (
-    <h1>Start the project!!</h1>
+    <div className="App bg-dark">
+      <AppRouter />
+    </div>
   );
 }
 

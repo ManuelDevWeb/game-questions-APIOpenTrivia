@@ -1,3 +1,54 @@
 1. Creamos nuestro proyecyo: npx create-react-app game-questions-opentrivia
 
 2. Realizamos limpieza de archivos innecesarios
+
+3. Inicializamos el repo en git.
+
+4. Instalamos Axios: npm install axios
+
+5. Instalamos React Router: npm install react-router-dom
+
+5. Instalamos Bootstrap: npm install bootstrap
+
+6. Crear la carpeta: src/components
+
+7. Crear la carpeta: src/hooks
+
+8. Crear la carpeta: src/components/styles
+
+9. Crear la carpeta: src/routers
+
+9. Crear el componente: src/routers/AppRouter.jsx
+
+10. Crear el componente Header: src/components/Header.jsx
+
+11. Crear el archivo: src/components/styles/Header.css
+
+12. Crear el componente Footer: src/components/Footer.jsx 
+
+13. Crear el archivo: src/components/styles/Footer.css
+
+14. Empezar a crear las rutas de nuestra aplicación en el AppRouter.jsx
+
+15. Crear el componente Home: src/pages/Home.jsx
+
+16. Crear el archivo: src/pages/styles/Home.css
+
+17. Crear el componente Question: src/pages/Question.jsx
+
+18. Crear el archivo: src/pages/styles/Question.css
+
+19. Crear el componente Result: src/pages/Result.jsx
+
+20. Crear el archivo: src/pages/styles/Result.css
+
+21. Crear el componente NotFound: src/pages/NotFound.jsx
+
+22. Crear el archivo: src/pages/styles/NotFound.css
+
+23. Crear la carpeta: src/img
+
+24. Crear el componente Logo: src/components/Logo.jsx
+
+25. Crear el componente Form: src/components/Form.jsx
+
