@@ -52,3 +52,24 @@
 
 25. Crear el componente Form: src/components/Form.jsx
 
+26. Crear el archivo: initialState.js 
+
+27. Crear la carpeta: src/api
+
+28. Crear el archivo: src/api/categories.js
+
+29. Crear el custom hook: src/hooks/useInitialState.js 
+
+30. Crear la carpeta: src/context
+
+31. Crear el context: src/context/AppContext.js
+
+32. Crear el componente Error: src/components/Error.jsx 
+
+33. Crear el custom hook: src/hooks/useInfo.js
+
+
+TO DO------
+* Pasar el header agregado al questions a un componente
+* Setear el initialState cada que entra un nuevo usuario
+* Funcionalidad para ir pintando la ganancia

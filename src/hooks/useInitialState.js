@@ -18,10 +18,17 @@ const useInitialState = () => {
         })
     }
 
+    const setScore = () => {
+
+    }
+
     // El custom hook retorna las funcionalidades que creamos
     return {
-        addInfoGame
+        addInfoGame,
+        setScore,
+        state
     };
 }
 
+// Exportando nuestro hook personalizado
 export default useInitialState;

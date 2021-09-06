@@ -1,4 +1,4 @@
-//Importando react
+// Importando react
 import { useState, useEffect } from 'react';
 
 //Creando hook useCharacter

@@ -2,9 +2,11 @@ import React, { useContext, useRef, useState } from 'react';
 // Importando info categorias
 import trivia_categories from '../api/categories';
 // Importando Link para conectar nuestra aplicación
-import {Link, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 // Importando context
 import {AppContext} from '../context/AppContext';
+// Importando componente Error
+import Error from './Error';
 
 function Form() {
     // Destructurando los elementos del elemento AppContext con useContext
@@ -19,6 +21,8 @@ function Form() {
     // Instanciando history
     const history=useHistory();
 
+    // const cargando=false;
+
     // Función proceder a jugar
     const handleSubmit=()=>{
         // Capturando la información del formulario utilizando FormData
@@ -29,6 +33,7 @@ function Form() {
             'username': formData.get('username'),
             'category': formData.get('category'),
             'dificult': formData.get('dificult'),
+            'score': 1000
         }
 
         // Destructurando los datos para luego validar que no estes vacios
@@ -42,21 +47,20 @@ function Form() {
             // Función para agregar la información
             addInfoGame(dataGame);
 
-            // Enviamos al usuario a la siguiente página
-            history.push('/questions');
+            setTimeout(() => {
+                // Enviamos al usuario a la siguiente página
+                history.push('/questions');
+            }, 2000);
         }
     }
 
-
-
     return (
         <div className="container">
-
-            <form ref={form}>
+            <form ref={form} className="mt-5">
                 <div className="row flex-column align-items-center text-center">
 
                     {
-                        error ? <div className="btn btn-danger col-4 col-md-3 mt-5">All fields are required</div> : null
+                        error ? <Error>All fields are required</Error> : null
                     }
 
                     <div className="form-group col-md-4 mt-2">
