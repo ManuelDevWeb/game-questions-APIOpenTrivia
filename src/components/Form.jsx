@@ -8,7 +8,7 @@ import {AppContext} from '../context/AppContext';
 // Importando componente Error
 import Error from './Error';
 
-function Form() {
+function Form({requestAPI}) {
     // Destructurando los elementos del elemento AppContext con useContext
     const {addInfoGame}=useContext(AppContext);
 
@@ -46,6 +46,8 @@ function Form() {
             setError(false);
             // Función para agregar la información
             addInfoGame(dataGame);
+
+            requestAPI(category, dificult)
 
             setTimeout(() => {
                 // Enviamos al usuario a la siguiente página

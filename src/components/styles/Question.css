@@ -1,0 +1,66 @@
+.questions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questions span {
+    color: #29F3C3;
+    font-weight: 700;
+}
+
+.question {
+    width: 95%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FFFFFF;
+    border: 5px solid #29F3C3;
+}
+
+.optionsQuestion {
+    width: 95%;
+}
+
+.bg-light {
+    background-color: #ccccccaf!important;
+    border: 2px solid #cccccc62!important;
+}
+
+.singleOption {
+    width: 45%;
+    height: 50px;
+    box-shadow: 0 0 2px #FFFFFF;
+}
+
+@media (max-width:614px) {
+    .singleOption {
+        width: 100%;
+    }
+}
+
+.select {
+    background-color: #29F3C3;
+    color: #000000;
+    box-shadow: 0 0 2px #FFFFFF;
+}
+
+.wrong {
+    background-color: rgb(214, 68, 97);
+    color: #000000;
+    box-shadow: 0 0 2px #FFFFFF;
+}
+
+.buttonsSettings button {
+    text-decoration: none!important;
+    background-color: #929997!important;
+}
+
+.buttonsSettings button:hover {
+    color: #FFFFFF!important;
+    background-color: #000000!important;
+    transition: all 1.5s ease-out;
+}

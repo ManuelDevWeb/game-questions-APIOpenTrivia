@@ -34,9 +34,9 @@
 
 16. Crear el archivo: src/pages/styles/Home.css
 
-17. Crear el componente Question: src/pages/Question.jsx
+17. Crear el componente ListOfQuestions: src/pages/ListOfQuestions.jsx
 
-18. Crear el archivo: src/pages/styles/Question.css
+18. Crear el archivo: src/pages/styles/ListOfQuestions.css
 
 19. Crear el componente Result: src/pages/Result.jsx
 
@@ -68,8 +68,14 @@
 
 33. Crear el custom hook: src/hooks/useInfo.js
 
+--
 
-TO DO------
+35. Crear el componente Question: src/components/Question.jsx
+
+36. Crear el archivo: src/components/styles/Question.css
+
+
+TO DO (1:21:00)------
 * Pasar el header agregado al questions a un componente
 * Setear el initialState cada que entra un nuevo usuario
 * Funcionalidad para ir pintando la ganancia

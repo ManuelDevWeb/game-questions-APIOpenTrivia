@@ -4,13 +4,15 @@ import Form from '../components/Form';
 // Importando estilos del Home
 import './styles/Home.css';
 
-function Home() {
+function Home({requestAPI}) {
     return (
         <div className='container'>
             <div className='titleHome text-center mt-5'>
                 <span className='display-3'>Login To Start!</span>
             </div>
-            <Form />
+            <Form 
+                requestAPI={requestAPI}
+            />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import React from 'react';
 
 function Error({children}) {
     return(
-        <div className="btn btn-danger col-4 col-md-3 mt-5">
+        <div className="btn btn-danger col-4 col-md-3 mt-3">
             {children}
         </div>
     )
