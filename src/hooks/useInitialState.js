@@ -18,14 +18,20 @@ const useInitialState = () => {
         })
     }
 
-    const setScore = () => {
-
+    // Funcionalidad para actualizar el score
+    const updateScore = (payload) => {
+        setState({
+            // Conservamos el state anterior
+            ...state,
+            // Agregamos al score la nueva información
+            score: payload
+        })
     }
 
     // El custom hook retorna las funcionalidades que creamos
     return {
         addInfoGame,
-        setScore,
+        updateScore,
         state
     };
 }

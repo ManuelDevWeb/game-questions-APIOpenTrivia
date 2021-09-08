@@ -75,7 +75,3 @@
 36. Crear el archivo: src/components/styles/Question.css
 
 
-TO DO (1:21:00)------
-* Pasar el header agregado al questions a un componente
-* Setear el initialState cada que entra un nuevo usuario
-* Funcionalidad para ir pintando la ganancia

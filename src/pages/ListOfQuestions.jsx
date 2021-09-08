@@ -7,6 +7,8 @@ import { AppContext } from '../context/AppContext';
 // import useInfo from '../hooks/useInfo';
 // Importando componente Question
 import Question from '../components/Question';
+// Importando componente ListOfScore
+import ListOfScores from '../components/ListOfScores';
 // Importando estilos del header
 import '../components/styles/Header.css';
 // Importando estilos del ListOfQuestions
@@ -41,44 +43,49 @@ function ListOfQuestions({questions, setQuestions, scoreuser, setScore}) {
     }
 
     return (
-      <div>
-        <div className="row text-center align-items-end header mt-2">
-          <div className="col-md-4">
-            <h1 className="m-0">Player: <span>{username}</span></h1>
+      <div className="row">
+        <div className="col-12 col-md-10">
+          <div className="row text-center align-items-end header mt-2">
+            <div className="col-md-4">
+              <h1 className="m-0">Player: <span>{username}</span></h1>
+            </div>
+            <div className="col-md-4">
+              <p className="m-0">
+                Level: <span>{dificult}</span>
+              </p>
+            </div>
+            <div className="col-md-4">
+              <p className="m-0">
+                Score: <span>${score}</span>
+              </p>
+            </div>
+            <div className="container">
+              <SvgComponent />
+            </div>
           </div>
-          <div className="col-md-4">
-            <p className="m-0">
-              Level: <span>{dificult}</span>
-            </p>
-          </div>
-          <div className="col-md-4">
-            <p className="m-0">
-              Score: <span>${score}</span>
-            </p>
-          </div>
-          <div className="container">
-            <SvgComponent />
-          </div>
-        </div>
 
-        <span className='subtitle'>
-          {
-            //Iterando sobre las preguntas
-            questions ? 
-            <Question 
-              currQues={currQues}
-              setCurreQues={setCurreQues}
-              options={options}
-              questions={questions}
-              correct={questions[currQues]?.correct_answer}
-              scoreuser={scoreuser}
-              setScore={setScore}
-            />
-            :
-            null
-            
-          }
-        </span>
+          <span className='subtitle'>
+            {
+              //Iterando sobre las preguntas
+              questions ? 
+              <Question 
+                currQues={currQues}
+                setCurreQues={setCurreQues}
+                options={options}
+                questions={questions}
+                correct={questions[currQues]?.correct_answer}
+                scoreuser={scoreuser}
+                setScore={setScore}
+              />
+              :
+              null
+              
+            }
+          </span>
+        </div>
+        <div className="col-12 col-md-2">
+            <ListOfScores />
+        </div>
       </div>
     );
 }
