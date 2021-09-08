@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import SvgComponent from '../components/Logo';
 // Importando AppContext
 import { AppContext } from '../context/AppContext';
+// Importando History
+import { useHistory } from 'react-router';
 // Importando hook para llamado a API
 // import useInfo from '../hooks/useInfo';
 // Importando componente Question
@@ -16,17 +18,18 @@ import './styles/ListOfQuestions.css';
 
 function ListOfQuestions({questions, setQuestions, scoreuser, setScore}) {
     // Destructurando los elementos del elemento AppContext con useContext
-    const {state: { dataGame }}=useContext(AppContext);
-    const {username, dificult, score}=dataGame[0];
+    const {state: { dataGame, scoreUser }}=useContext(AppContext);
+    const {username, dificult}=dataGame[0];
 
-    // Url de la API
-    //const API=`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${dificult}&type=multiple`;
+    const history=useHistory();
 
-    // Almacenando la información que retorna la API
-    //const dataQuestions=useInfo(API);
+    useEffect(() => {
+      // Validar si no existe nombre
+      if(!username || username===undefined){
+          history.push('/');
+      }
+    }, [username, history]);
     
-
-    // TO DO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     const [options, setOptions]=useState();
     const [currQues, setCurreQues]=useState(0);
 
@@ -56,7 +59,7 @@ function ListOfQuestions({questions, setQuestions, scoreuser, setScore}) {
             </div>
             <div className="col-md-4">
               <p className="m-0">
-                Score: <span>${score}</span>
+                Score: <span>${scoreUser}</span>
               </p>
             </div>
             <div className="container">

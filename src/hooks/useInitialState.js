@@ -24,7 +24,18 @@ const useInitialState = () => {
             // Conservamos el state anterior
             ...state,
             // Agregamos al score la nueva información
-            score: payload
+            scoreUser: payload + 1000
+        })
+    }
+
+    // Funcionalidad para eliminar el usuario
+    const deleteInfoGame = () => {
+        setState({
+            // Conservamos el state anterior
+            ...state,
+            // Inicializamos el dataGame vacio
+            dataGame: [],
+            scoreUser: 0
         })
     }
 
@@ -32,6 +43,7 @@ const useInitialState = () => {
     return {
         addInfoGame,
         updateScore,
+        deleteInfoGame,
         state
     };
 }

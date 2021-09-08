@@ -33,7 +33,6 @@ function Form({requestAPI}) {
             'username': formData.get('username'),
             'category': formData.get('category'),
             'dificult': formData.get('dificult'),
-            'score': 1000
         }
 
         // Destructurando los datos para luego validar que no estes vacios

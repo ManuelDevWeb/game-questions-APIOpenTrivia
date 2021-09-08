@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
-// Importando componenten Error
-import Error from './Error';
+import React, { useState, useEffect, useContext } from 'react';
 // Importando History
 import {useHistory} from 'react-router-dom';
+// Importando AppContext
+import { AppContext } from '../context/AppContext';
 // Importando estilos
 import './styles/Question.css';
 
 function Question(props) {
     const {currQues, setCurreQues, options, questions, correct, scoreuser,setScore}=props;
 
+    // Destructurando AppContext
+    const {state:{ scoreUser },updateScore, deleteInfoGame}=useContext(AppContext);
+
     const [selected, setSelected]=useState();
+    const [elegida, setElegida]=useState(false);
 
     const history=useHistory();
 
@@ -29,21 +33,28 @@ function Question(props) {
         setSelected(option);
 
         if(option===correct && currQues<9){
+            setElegida(true);
             setScore(scoreuser+1000);
+            updateScore(scoreUser);
             setTimeout(() => { 
                 setCurreQues(currQues+1);
                 setSelected();
+                setElegida(false);
             }, 3000);
         }else if(option !== correct && currQues<9){
+            setElegida(true);
             setTimeout(() => { 
                 setCurreQues(currQues+1);
                 setSelected();
+                setElegida(false);
             }, 3000);
         }
 
         if(currQues >= 9){
             if(option===correct){
+                setElegida(true);
                 setScore(scoreuser+1000);
+                updateScore(scoreUser);
             }
             setTimeout(() => {
                 history.push("/result")
@@ -51,9 +62,17 @@ function Question(props) {
         }
         
     }
-    
-    
 
+    /*
+    useEffect(() => {
+        if (elegida === false) {
+          setTimeout(() => {
+            history.push("/");
+          }, 13000);
+        }
+    }, [elegida])
+    */
+    
     /*
     const handleNext=()=>{
         if(currQues >= 9){
@@ -71,19 +90,9 @@ function Question(props) {
     
 
     const handleQuit=()=>{
+        deleteInfoGame();
         history.push("/");
     }
-
-
-    
-    setTimeout(() => {
-        if(selected===''){
-            console.log(selected);
-            history.push("/");
-        }
-    }, 5000);
-    
-    
 
     return (
       <div className="container text-center questions">
@@ -92,7 +101,6 @@ function Question(props) {
         </h1>
 
         <div className="question mb-4 mb-md-0">
-           
           <h3 className="text-black">{questions[currQues].question}</h3>
 
           {/*error ? <Error>Select one answer please!</Error> : null*/}
@@ -116,7 +124,6 @@ function Question(props) {
           </div>
 
           <div className="buttonsSettings mb-3 mb-md-0 ">
-
             <button
               className="text-black mx-2 px-5 py-2 bg-dark exit"
               onClick={handleQuit}
@@ -125,18 +132,16 @@ function Question(props) {
             </button>
 
             {
-             /*
-<button
-              className="text-black mx-2 px-5 py-2 bg-dark next"
-              onClick={handleNext}
-            >
-              Next
-            </button>
-             */   
+              /*
+              <button
+                className="text-black mx-2 px-5 py-2 bg-dark next"
+                onClick={handleNext}
+              >
+                Next
+              </button>
+              */
             }
-            
 
-            
           </div>
         </div>
       </div>

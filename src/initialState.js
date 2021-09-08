@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     dataGame: [],
-    score: 0,
+    scoreUser: 0,
     listOfScores: [{
             "id": 10,
             "value": "10000"
