@@ -1,19 +1,22 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 // Importando History
 import {useHistory} from 'react-router-dom';
 // Importando AppContext
 import { AppContext } from '../context/AppContext';
+// Importando componente Timer
+import Timer from './Timer';
 // Importando estilos
 import './styles/Question.css';
 
 function Question(props) {
-    const {currQues, setCurreQues, options, questions, correct, scoreuser,setScore}=props;
+    const {currQues, setCurreQues, options, questions, correct}=props;
 
     // Destructurando AppContext
     const {state:{ scoreUser },updateScore, deleteInfoGame}=useContext(AppContext);
 
     const [selected, setSelected]=useState();
-    const [elegida, setElegida]=useState(false);
+
+    //const [elegida, setElegida]=useState(false);
 
     const history=useHistory();
 
@@ -28,49 +31,51 @@ function Question(props) {
         }
     }
 
-
     const handleCheck=(option)=>{
         setSelected(option);
 
         if(option===correct && currQues<9){
-            setElegida(true);
-            setScore(scoreuser+1000);
+            //setElegida(true);
             updateScore(scoreUser);
             setTimeout(() => { 
                 setCurreQues(currQues+1);
                 setSelected();
-                setElegida(false);
+                //setElegida(false);
             }, 3000);
         }else if(option !== correct && currQues<9){
-            setElegida(true);
+            //setElegida(true);
             setTimeout(() => { 
                 setCurreQues(currQues+1);
                 setSelected();
-                setElegida(false);
+                //setElegida(false);
             }, 3000);
         }
 
         if(currQues >= 9){
             if(option===correct){
-                setElegida(true);
-                setScore(scoreuser+1000);
+                //setElegida(true);
                 updateScore(scoreUser);
             }
             setTimeout(() => {
                 history.push("/result")
             }, 3000);
         }
-        
     }
 
-    /*
+    
     useEffect(() => {
-        if (elegida === false) {
           setTimeout(() => {
             history.push("/");
-          }, 13000);
-        }
-    }, [elegida])
+          }, 500000);
+    })
+    
+
+    /*
+    if (timer === 0) return setTimeOut(true);
+      const interval = setInterval(() => {
+        setTimer((prev) => prev - 1);
+      }, 1000);
+      return () => clearInterval(interval);
     */
     
     /*
@@ -99,10 +104,9 @@ function Question(props) {
         <h1>
           Question Number <span>{currQues + 1}</span>
         </h1>
-
+        <Timer startCount={500}/>
         <div className="question mb-4 mb-md-0">
           <h3 className="text-black">{questions[currQues].question}</h3>
-
           {/*error ? <Error>Select one answer please!</Error> : null*/}
           <div className="optionsQuestion mb-3 mb-md-0">
             {

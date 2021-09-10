@@ -11,14 +11,15 @@ function ListOfScores() {
 
     return (
         <div>
-            <ul>
+            <ul className="mb-5 mx-2 text-center d-flex flex-column justify-content-center px-0 mt-md-5">
                 {
                     listOfScores.map((score)=>(
-                        <li key={score.id}>
+                        <ol key={score.id} className="px-2">
                             <Score 
                                 value={score.value}
+                                num={score.id}
                             />
-                        </li>
+                        </ol>
                     ))
                 }
             </ul>

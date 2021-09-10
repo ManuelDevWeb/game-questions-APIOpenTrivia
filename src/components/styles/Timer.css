@@ -1,0 +1,12 @@
+.contador {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #29F3C3;
+}
+
+.contador p {
+    margin-top: 7px;
+    margin-right: 1px;
+    color: #000000;
+}

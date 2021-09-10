@@ -29,24 +29,30 @@ function Form({requestAPI}) {
         const formData=new FormData(form.current);
 
         // Estructura del objeto dataGame con la información extraida del formulario
+        /*
         const dataGame={
             'username': formData.get('username'),
             'category': formData.get('category'),
             'dificult': formData.get('dificult'),
         }
+        */
+       const getUsername=formData.get('username');
+       const getCategory=formData.get('category');
+       const getDificult=formData.get('dificult');
+
 
         // Destructurando los datos para luego validar que no estes vacios
-        const {username, category, dificult}=dataGame;
+        //const {username, category, dificult}=dataGame;
 
-        if(!username || !category || !dificult){
+        if(!getUsername || !getCategory || !getDificult){
             setError(true);
             return;
         }else{
             setError(false);
             // Función para agregar la información
-            addInfoGame(dataGame);
+            addInfoGame(getUsername, getCategory, getDificult);
 
-            requestAPI(category, dificult)
+            requestAPI(getCategory, getDificult)
 
             setTimeout(() => {
                 // Enviamos al usuario a la siguiente página

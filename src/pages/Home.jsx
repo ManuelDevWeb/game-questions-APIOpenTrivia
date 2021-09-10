@@ -1,8 +1,6 @@
 import React from 'react';
 // Importando componente Form
 import Form from '../components/Form';
-// Importando estilos del Home
-import './styles/Home.css';
 
 function Home({requestAPI}) {
     return (

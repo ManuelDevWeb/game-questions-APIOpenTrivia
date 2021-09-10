@@ -18,7 +18,7 @@ import Layout from '../components/Layout'
 
 function AppRouter() {
   const [questions, setQuestions]=useState();
-  const [scoreuser, setScore]=useState(0);
+  //const [scoreuser, setScore]=useState(0);
 
 
   const requestAPI=async (category="", dificult="")=>{
@@ -40,13 +40,13 @@ function AppRouter() {
                 <ListOfQuestions
                   questions={questions} 
                   setQuestions={setQuestions}
-                  scoreuser={scoreuser}
-                  setScore={setScore}
+                  //scoreuser={scoreuser}
+                  //setScore={setScore}
                 />
               </Route>
               <Route path="/result">
                 <Result
-                  scoreuser={scoreuser}
+                  //scoreuser={scoreuser}
                 />
               </Route>
               <Route path="/" exact>

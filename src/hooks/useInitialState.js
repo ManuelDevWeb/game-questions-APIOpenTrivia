@@ -9,12 +9,15 @@ const useInitialState = () => {
     const [state, setState] = useState(initialState);
 
     // Funcionalidad para añadir el usuario
-    const addInfoGame = (payload) => {
+    const addInfoGame = (username, category, dificult) => {
         setState({
             // Conservamos el state anterior
             ...state,
             // Agregamos al dataGame lo que ya estaba alli y la información del username
-            dataGame: [...state.dataGame, payload]
+            //dataGame: [...state.dataGame, payload]
+            username: username,
+            category: category,
+            dificult: dificult,
         })
     }
 

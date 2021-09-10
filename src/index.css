@@ -17,7 +17,7 @@ a {
 }
 
 .App {
-    min-height: 98.5vh;
+    min-height: 100vh;
     border: 8px solid #29F3C3;
     padding: 5px;
 }

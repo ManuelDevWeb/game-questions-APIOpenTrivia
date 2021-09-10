@@ -1,6 +1,9 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-    dataGame: [],
+    //dataGame: [],
+    username: '',
+    category: '',
+    dificult: '',
     scoreUser: 0,
     listOfScores: [{
             "id": 10,
@@ -41,5 +44,6 @@ export default {
             "id": 1,
             "value": "1000"
         }
-    ]
+    ],
+    usernameValidation: ''
 }

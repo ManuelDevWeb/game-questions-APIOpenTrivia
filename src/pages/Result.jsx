@@ -8,7 +8,7 @@ import './styles/Result.css';
 
 function Result({scoreuser}) {
     // Destructurando AppContext
-    const {state:{dataGame, scoreUser}, deleteInfoGame}=useContext(AppContext);
+    const {state:{username, scoreUser}, deleteInfoGame}=useContext(AppContext);
 
     const history=useHistory();
 
@@ -20,13 +20,11 @@ function Result({scoreuser}) {
         }
     }, [scoreUser, history])
 
-    //const {username}=dataGame[0];
 
     return (
-        <div className="container text-center">
-            <h1 className="text-uppercase">Congratulatios!!!</h1>
-            <p>Hola</p>
-            <p>Your Score is: <span>{scoreUser}</span></p>
+        <div className="results container text-center">
+            <h1 className="text-uppercase mt-5">Congratulations!!! {username}</h1>
+            <p className="display-3">Your Score is: <span>{scoreUser}</span></p>
             {/* Darle estilos al button */}
             <Link to='/' onClick={deleteInfoGame} className="btn text-white btn-secondary">Go to Home</Link>
         </div>

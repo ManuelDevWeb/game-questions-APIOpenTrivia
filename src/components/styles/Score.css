@@ -1,0 +1,14 @@
+.score {
+    border: 1px solid #FFFFFF!important;
+    width: 80%;
+}
+
+@media (min-width: 768px) {
+    .mt-md-5 {
+        margin-top: 5rem !important;
+    }
+}
+
+.paintAdvance {
+    background-color: #29F3C3!important;
+}

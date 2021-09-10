@@ -13,19 +13,17 @@ import Question from '../components/Question';
 import ListOfScores from '../components/ListOfScores';
 // Importando estilos del header
 import '../components/styles/Header.css';
-// Importando estilos del ListOfQuestions
-import './styles/ListOfQuestions.css';
 
 function ListOfQuestions({questions, setQuestions, scoreuser, setScore}) {
     // Destructurando los elementos del elemento AppContext con useContext
-    const {state: { dataGame, scoreUser }}=useContext(AppContext);
-    const {username, dificult}=dataGame[0];
+    const {state: {scoreUser, dificult, username }}=useContext(AppContext);
+    //const {username, dificult}=dataGame;
 
     const history=useHistory();
 
     useEffect(() => {
       // Validar si no existe nombre
-      if(!username || username===undefined){
+      if(!username){
           history.push('/');
       }
     }, [username, history]);
